@@ -27,13 +27,16 @@ app.use(express.urlencoded({extended:false}));
 
 var createAccount = require('./routes/CreateAccount');
 var startSession = require('./routes/StartSession');
+var checkSession = require('./routes/CheckSession');
+var endSession = require('./routes/EndSession');
 
 app.use('/CreateAccount', createAccount );
 app.use('/StartSession', startSession );
+app.use('/CheckSession', checkSession );
+app.use('/EndSession', endSession );
 
 const PORT = 8000;
 app.listen(PORT, function(err){ 
 	if (err) console.log(err); 
 	console.log("Server listening on PORT", PORT); 
-}); 
-
+});
