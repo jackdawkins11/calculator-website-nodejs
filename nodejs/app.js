@@ -8,10 +8,28 @@ mongoose.connect(mongoAuth.mongodb, { useNewUrlParser: true , useUnifiedTopology
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+var session = require('express-session');
+app.use(session({ 
+
+	// It holds the secret key for session 
+	secret: 'Your_Secret_Key', 
+
+	// Forces the session to be saved 
+	// back to the session store 
+	resave: true, 
+
+	// Forces a session that is "uninitialized" 
+	// to be saved to the store 
+	saveUninitialized: true
+}));
+
 app.use(express.urlencoded({extended:false}));
 
 var createAccount = require('./routes/CreateAccount');
+var startSession = require('./routes/StartSession');
+
 app.use('/CreateAccount', createAccount );
+app.use('/StartSession', startSession );
 
 const PORT = 8000;
 app.listen(PORT, function(err){ 
