@@ -1,5 +1,9 @@
 var mongoose = require('mongoose');
 
+/*
+  Defines the calculation.
+*/
+
 var Schema = mongoose.Schema;
 
 var CalculationSchema = new Schema(

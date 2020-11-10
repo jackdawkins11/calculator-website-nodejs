@@ -4,6 +4,16 @@ var async = require('async');
 
 var router = express.Router();
 
+/*
+    Checks the username and password for validity.
+    Returns
+        null if they are goood
+    otherwise, returns json containing
+            error: false
+            createdAccount: false,
+            message: why the username or password is invalid
+*/
+
 function checkUsernameAndPassword(username, password) {
     if (!username) {
         return {

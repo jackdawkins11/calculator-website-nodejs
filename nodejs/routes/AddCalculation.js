@@ -6,6 +6,14 @@ const User = require('../models/User');
 
 var router = express.Router();
 
+/*
+    Handles the request to AddCalculation. Expects x, op, y, val, date as POST params.
+    Also expects the user to have a session.
+    Returns json containing:
+        error (bool) true if there are bad input parameters, the user does not
+            have a session, or there was an error inserting into the database
+*/
+
 router.post('/', [
     body('x', 'x must be 0-10 digit number.').trim().isLength({ min: 1, max: 10 })
         .isNumeric(),

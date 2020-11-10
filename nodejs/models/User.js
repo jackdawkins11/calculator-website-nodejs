@@ -1,5 +1,9 @@
 var mongoose = require('mongoose');
 
+/*
+  Defines the User table.
+*/
+
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema(
