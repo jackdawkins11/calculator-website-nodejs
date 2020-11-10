@@ -29,11 +29,15 @@ var createAccount = require('./routes/CreateAccount');
 var startSession = require('./routes/StartSession');
 var checkSession = require('./routes/CheckSession');
 var endSession = require('./routes/EndSession');
+var addCalculation = require('./routes/AddCalculation');
+var getLast10Calculations = require('./routes/GetLast10Calculations');
 
 app.use('/CreateAccount', createAccount );
 app.use('/StartSession', startSession );
 app.use('/CheckSession', checkSession );
 app.use('/EndSession', endSession );
+app.use( '/AddCalculation', addCalculation );
+app.use( '/GetLast10Calculations', getLast10Calculations );
 
 const PORT = 8000;
 app.listen(PORT, function(err){ 
