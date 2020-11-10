@@ -8,6 +8,8 @@ mongoose.connect(mongoAuth.mongodb, { useNewUrlParser: true , useUnifiedTopology
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+app.use(express.static('../static'));
+
 var session = require('express-session');
 app.use(session({ 
 

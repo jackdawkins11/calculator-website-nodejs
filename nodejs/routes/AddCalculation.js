@@ -31,7 +31,6 @@ router.post('/', [
                 User.find( {username: req.session.username} ).exec(callback);
             },
             function(user, callback){
-                console.log(user);
                 var calculation = new Calculation({
                     X: req.body.x,
                     Op: req.body.op,

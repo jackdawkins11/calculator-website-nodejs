@@ -9,7 +9,7 @@ var CalculationSchema = new Schema(
     Y: {type: String, required: true, maxlength: 11},
     Val: {type: String, required: true, maxlength: 11},
     Date: {type: Date},
-    User: [{type: Schema.Types.ObjectId, ref: 'User', reequired: true}]
+    User: {type: Schema.Types.ObjectId, ref: 'User', reequired: true}
   }
 );
 
