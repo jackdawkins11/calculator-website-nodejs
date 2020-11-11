@@ -4,6 +4,14 @@ var async = require('async');
 
 var router = express.Router();
 
+/*
+    Handles requests to /StartSession
+    Returns {
+        error (bool)
+        hasSession (bool)
+    }
+*/
+
 router.post('/', function(req, res){
     var response = {
         error: false,

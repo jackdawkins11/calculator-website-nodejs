@@ -4,6 +4,13 @@ const User = require('../models/User');
 
 var router = express.Router();
 
+/*
+    Handles requests to /GetLast10Calculations
+    Returns json containing
+        error (bool) whether there was an error
+        calculations: [{X, Op, Y, Val, Date, Username}]
+*/
+
 router.post('/', function(req, res){
     Calculation.find({}).sort('-Date').limit(10).populate('User').exec(function( err, calculations){
         if( err ){

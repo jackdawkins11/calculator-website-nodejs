@@ -72,6 +72,16 @@ function checkUsernameAndPassword(username, password) {
     return null;
 }
 
+/*
+    Handles requests to /CreateAccount.
+    Requires username and password as POST params.
+    Returns json containing
+        error (bool) whether there was an error
+        createdAccount (bool) whether the specified account was created
+        message (string) a message indicating why there was an error or an
+            account was not created
+*/
+
 router.post('/', [
     function (req, res, next) {
         var username = req.body.username;
